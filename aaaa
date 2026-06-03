@@ -6767,4 +6767,11 @@ end;
 
 Fatality.FATALITY_PID = Fatality:RandomString();
 
+local Window = Fatality.new({
+    Name = "FATALITY",
+    Scale = UDim2.new(0, 750, 0, 500),
+    Keybind = "Insert",
+    Expire = "never",
+})
+
 return Fatality;
