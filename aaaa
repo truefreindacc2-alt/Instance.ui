@@ -1673,7 +1673,7 @@ function Fatality:CreateColorPicker(ColorBox: Frame,Transparency, Callback)
 	ColorPickerFrame.Name = Fatality:RandomString()
 	ColorPickerFrame.Parent = OwnWindow
 	ColorPickerFrame.AnchorPoint = Vector2.new(0.5, 0)
-	ColorPickerFrame.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+	ColorPickerFrame.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 	ColorPickerFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ColorPickerFrame.BorderSizePixel = 0
 	ColorPickerFrame.ClipsDescendants = true
@@ -2184,7 +2184,7 @@ function Fatality:CreateDropdown(Parent: Frame, Default: string | {[string]: boo
 	DropdownItemFrame.Name = Fatality:RandomString()
 	DropdownItemFrame.Parent = Window
 	DropdownItemFrame.AnchorPoint = Vector2.new(0, 0)
-	DropdownItemFrame.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+	DropdownItemFrame.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 	DropdownItemFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	DropdownItemFrame.BorderSizePixel = 0
 	DropdownItemFrame.ClipsDescendants = true
@@ -3694,7 +3694,7 @@ function Fatality:CreateConfigWindow(Root: ScreenGui , Fatal , Button: ImageButt
 	ConfigWindowFrame.Name = "ConfigWindowFrame"
 	ConfigWindowFrame.Parent = Root
 	ConfigWindowFrame.AnchorPoint = Vector2.new(0,1)
-	ConfigWindowFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+	ConfigWindowFrame.BackgroundColor3 = Color3.fromRGB(24, 45, 85)
 	ConfigWindowFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ConfigWindowFrame.BorderSizePixel = 0
 	ConfigWindowFrame.ClipsDescendants = true
@@ -4392,7 +4392,7 @@ function Fatality.new(Window: Window)
 	FatalFrame.Name = Fatality:RandomString()
 	FatalFrame.Parent = Fatalitywin
 	FatalFrame.AnchorPoint = Vector2.new(0.5, 0)
-	FatalFrame.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+	FatalFrame.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 	FatalFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	FatalFrame.BorderSizePixel = 0
 	FatalFrame.Position = UDim2.new(0.5, 0, 0.2);
@@ -4420,7 +4420,7 @@ function Fatality.new(Window: Window)
 	Header.Name = Fatality:RandomString()
 	Header.Parent = FatalFrame
 	Header.Active = true
-	Header.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+	Header.BackgroundColor3 = Color3.fromRGB(21, 42, 82)
 	Header.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Header.BorderSizePixel = 0
 	Header.Size = UDim2.new(1, 0, 0, 40)
@@ -4582,7 +4582,7 @@ function Fatality.new(Window: Window)
 	Bottom.Parent = FatalFrame
 	Bottom.Active = true
 	Bottom.AnchorPoint = Vector2.new(0, 1)
-	Bottom.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+	Bottom.BackgroundColor3 = Color3.fromRGB(21, 42, 82)
 	Bottom.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Bottom.BorderSizePixel = 0
 	Bottom.Position = UDim2.new(0, 0, 1, 0)
@@ -4786,7 +4786,7 @@ function Fatality.new(Window: Window)
 
 		MenuButton.Name = Fatality:RandomString()
 		MenuButton.Parent = tbc;
-		MenuButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+		MenuButton.BackgroundColor3 = Color3.fromRGB(30, 50, 90)
 		MenuButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		MenuButton.BorderSizePixel = 0
 		MenuButton.Size = UDim2.new(0, 90, 0.85, 0)
@@ -5103,7 +5103,7 @@ function Fatality.new(Window: Window)
 
 			Preview.Name = "Preview"
 			Preview.Parent = (string.lower(Config.Position) == 'left' and Left) or (string.lower(Config.Position) == 'center' and Center) or Right;
-			Preview.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+			Preview.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 			Preview.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Preview.BorderSizePixel = 0
 			Preview.ClipsDescendants = true
@@ -5129,7 +5129,7 @@ function Fatality.new(Window: Window)
 			Main.Name = "Main"
 			Main.Parent = Preview
 			Main.AnchorPoint = Vector2.new(0.5, 1)
-			Main.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+			Main.BackgroundColor3 = Color3.fromRGB(24, 45, 85)
 			Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Main.BorderSizePixel = 0
 			Main.Position = UDim2.new(0.5, 0, 1, -1)
@@ -5240,7 +5240,7 @@ function Fatality.new(Window: Window)
 
 			ListBox.Name = Fatality:RandomString()
 			ListBox.Parent = (string.lower(Config.Position) == 'left' and Left) or (string.lower(Config.Position) == 'center' and Center) or Right;
-			ListBox.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+			ListBox.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 			ListBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			ListBox.BorderSizePixel = 0
 			ListBox.ClipsDescendants = true
@@ -5253,7 +5253,7 @@ function Fatality.new(Window: Window)
 			Elements.Name = Fatality:RandomString()
 			Elements.Parent = ListBox
 			Elements.AnchorPoint = Vector2.new(0.5, 1)
-			Elements.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+			Elements.BackgroundColor3 = Color3.fromRGB(24, 45, 85)
 			Elements.BackgroundTransparency = 0
 			Elements.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Elements.BorderSizePixel = 0
@@ -5712,7 +5712,7 @@ function Fatality.new(Window: Window)
 
 			Section.Name = Fatality:RandomString()
 			Section.Parent = (string.lower(Config.Position) == 'left' and Left) or (string.lower(Config.Position) == 'center' and Center) or Right;
-			Section.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+			Section.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 			Section.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Section.BorderSizePixel = 0
 			Section.ClipsDescendants = true
@@ -5721,7 +5721,7 @@ function Fatality.new(Window: Window)
 			Elements.Name = Fatality:RandomString()
 			Elements.Parent = Section
 			Elements.AnchorPoint = Vector2.new(0.5, 1)
-			Elements.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+			Elements.BackgroundColor3 = Color3.fromRGB(24, 45, 85)
 			Elements.BackgroundTransparency = 0
 			Elements.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Elements.BorderSizePixel = 0
@@ -5952,7 +5952,7 @@ function Fatality.new(Window: Window)
 		SearchFrame.Name = Fatality:RandomString()
 		SearchFrame.Parent = Fatalitywin;
 		SearchFrame.AnchorPoint = Vector2.new(0, 1)
-		SearchFrame.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+		SearchFrame.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 		SearchFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		SearchFrame.BorderSizePixel = 0
 		SearchFrame.Position = UDim2.new(4,0,4,0)
@@ -6609,7 +6609,7 @@ function Fatality:CreateNotifier(): Notifier
 
 			notify.Name = Fatality:RandomString()
 			notify.Parent = layout
-			notify.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+			notify.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 			notify.BackgroundTransparency = 1.000
 			notify.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			notify.BorderSizePixel = 0
@@ -6618,7 +6618,7 @@ function Fatality:CreateNotifier(): Notifier
 			notify_block.Name = Fatality:RandomString()
 			notify_block.Parent = notify
 			notify_block.AnchorPoint = Vector2.new(0.5, 0)
-			notify_block.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+			notify_block.BackgroundColor3 = Color3.fromRGB(19, 40, 80)
 			notify_block.BackgroundTransparency = 1
 			notify_block.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			notify_block.BorderSizePixel = 0
