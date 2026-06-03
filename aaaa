@@ -4446,7 +4446,7 @@ function Fatality.new(Window: Window)
 	HeaderText.BackgroundTransparency = 1.000
 	HeaderText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	HeaderText.BorderSizePixel = 0
-	HeaderText.Position = UDim2.new(0, 5, 0.5, 0)
+	HeaderText.Position = UDim2.new(0, 5, 0.42, 0)
 	HeaderText.Size = UDim2.new(0, 100, 0.699999988, 0)
 	HeaderText.ZIndex = 4
 	HeaderText.Font = Enum.Font.GothamBold
@@ -4496,7 +4496,7 @@ function Fatality.new(Window: Window)
 	UserProfle.BackgroundTransparency = 1.000
 	UserProfle.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserProfle.BorderSizePixel = 0
-	UserProfle.Position = UDim2.new(1, -5, 0.5, 0)
+	UserProfle.Position = UDim2.new(1, -5, 0.45, 0)
 	UserProfle.Size = UDim2.new(0, 150, 0.75, 0)
 	UserProfle.ZIndex = 4
 
@@ -4507,7 +4507,7 @@ function Fatality.new(Window: Window)
 	UserIcon.BackgroundTransparency = 1.000
 	UserIcon.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserIcon.BorderSizePixel = 0
-	UserIcon.Position = UDim2.new(1, -10, 0.5, 0)
+	UserIcon.Position = UDim2.new(1, -10, 0.45, 0)
 	UserIcon.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
 	UserIcon.SizeConstraint = Enum.SizeConstraint.RelativeYY
 	UserIcon.ZIndex = 5
@@ -4619,6 +4619,115 @@ function Fatality.new(Window: Window)
 
 	Fatality:Drag(FatalFrame,FatalFrame,0.1);
 
+	-- Watermark: small logo + "instance" label, separator, FPS and ping counters
+	do
+		local Watermark = Instance.new("Frame")
+		local UICorner_W = Instance.new("UICorner")
+		local Logo = Instance.new("ImageLabel")
+		local Label = Instance.new("TextLabel")
+		local Sep = Instance.new("Frame")
+		local FPSLabel = Instance.new("TextLabel")
+		local PingLabel = Instance.new("TextLabel")
+
+		Watermark.Name = Fatality:RandomString()
+		Watermark.Parent = Fatalitywin
+		Watermark.AnchorPoint = Vector2.new(0,0)
+		Watermark.BackgroundColor3 = Color3.fromRGB(19, 40, 85)
+		Watermark.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Watermark.BorderSizePixel = 0
+		-- position outside the main menu (top-left of screen)
+		Watermark.Position = UDim2.new(0, 12, 0, 12)
+		Watermark.Size = UDim2.new(0, 180, 0, 28)
+		Watermark.ZIndex = 10
+
+		UICorner_W.CornerRadius = UDim.new(0, 4)
+		UICorner_W.Parent = Watermark
+
+		Logo.Name = Fatality:RandomString()
+		Logo.Parent = Watermark
+		Logo.BackgroundTransparency = 1
+		Logo.BorderSizePixel = 0
+		Logo.Position = UDim2.new(0, 6, 0.5, 0)
+		Logo.AnchorPoint = Vector2.new(0,0.5)
+		Logo.Size = UDim2.new(0, 18, 0, 18)
+		Logo.Image = Fatality:GetIcon("moon") or "http://www.roblox.com/asset/?id=11290237405"
+		Logo.ImageColor3 = Color3.fromRGB(135,200,255)
+		Logo.ZIndex = 11
+
+		Label.Name = Fatality:RandomString()
+		Label.Parent = Watermark
+		Label.AnchorPoint = Vector2.new(0,0.5)
+		Label.BackgroundTransparency = 1
+		Label.Position = UDim2.new(0, 30, 0.5, 0)
+		Label.Size = UDim2.new(0, 70, 0, 20)
+		Label.FontFace = Fatality.FontSemiBold
+		Label.Text = "instance"
+		Label.TextColor3 = Color3.fromRGB(135,200,255)
+		Label.TextSize = 14
+		Label.TextXAlignment = Enum.TextXAlignment.Left
+		Label.ZIndex = 11
+
+		Sep.Name = Fatality:RandomString()
+		Sep.Parent = Watermark
+		Sep.AnchorPoint = Vector2.new(0,0.5)
+		Sep.BackgroundColor3 = Color3.fromRGB(100,170,240)
+		Sep.BorderSizePixel = 0
+		Sep.Position = UDim2.new(0, 105, 0.5, 0)
+		Sep.Size = UDim2.new(0, 1, 0, 18)
+		Sep.ZIndex = 11
+
+		FPSLabel.Name = Fatality:RandomString()
+		FPSLabel.Parent = Watermark
+		FPSLabel.AnchorPoint = Vector2.new(0,0.5)
+		FPSLabel.BackgroundTransparency = 1
+		FPSLabel.Position = UDim2.new(0, 112, 0.45, 0)
+		FPSLabel.Size = UDim2.new(0, 60, 0, 12)
+		FPSLabel.FontFace = Fatality.FontSemiBold
+		FPSLabel.Text = "0 FPS"
+		FPSLabel.TextColor3 = Color3.fromRGB(200,220,255)
+		FPSLabel.TextSize = 12
+		FPSLabel.TextXAlignment = Enum.TextXAlignment.Left
+		FPSLabel.ZIndex = 11
+
+		PingLabel.Name = Fatality:RandomString()
+		PingLabel.Parent = Watermark
+		PingLabel.AnchorPoint = Vector2.new(0,0.5)
+		PingLabel.BackgroundTransparency = 1
+		PingLabel.Position = UDim2.new(0, 112, 0.75, 0)
+		PingLabel.Size = UDim2.new(0, 60, 0, 12)
+		PingLabel.FontFace = Fatality.FontSemiBold
+		PingLabel.Text = "-- ms"
+		PingLabel.TextColor3 = Color3.fromRGB(170,200,255)
+		PingLabel.TextSize = 11
+		PingLabel.TextXAlignment = Enum.TextXAlignment.Left
+		PingLabel.ZIndex = 11
+
+		-- update loop: FPS via RenderStepped, ping via Stats if available (safe pcall)
+		local smoothFPS = 0
+		RunService.RenderStepped:Connect(function(dt)
+			local instFPS = (dt > 0) and (1 / dt) or 0
+			smoothFPS = (smoothFPS * 0.85) + (instFPS * 0.15)
+			FPSLabel.Text = tostring(math.floor(smoothFPS + 0.5)) .. " FPS"
+
+			-- attempt to read ping from Stats (may not be available in all environments)
+			local pingStr = "-- ms"
+			pcall(function()
+				local stats = game:GetService('Stats')
+				if stats then
+					local network = stats:FindFirstChild('Network')
+					if network then
+						local dataPing = network:FindFirstChild('Data Ping') or network:FindFirstChild('Ping')
+						if dataPing and typeof(dataPing.GetValue) == 'function' then
+							local v = dataPing:GetValue()
+							pingStr = tostring(math.floor(v)) .. " ms"
+						end
+					end
+				end
+			end)
+
+			PingLabel.Text = pingStr
+		end)
+	end
 	UserInputService.InputBegan:Connect(function(input,istyping)
 		if not istyping then
 			if input.KeyCode == Window.Keybind or input.KeyCode.Name == Window.Keybind then
